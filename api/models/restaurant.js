@@ -4,7 +4,7 @@ const restaurantSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name: String,
     cuisine:String,
-    location:Number,
+    location:String,
     allergies:String
 
 

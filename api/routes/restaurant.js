@@ -6,8 +6,16 @@ const Restaurant = require('../models/Restaurant');
 
 // Handling incoming get requests to /order
 router.get('/', (req,res,next) => {
-    res.status(200).json({
-        message: 'Handle get requests to the file'
+    Restaurant.find().exec()
+    .then(docs =>{
+        console.log(docs);
+        res.status(200).json(docs);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
     });
 });
 router.post('/', (req,res,next) => {
