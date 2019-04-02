@@ -11,13 +11,8 @@ router.get('/', (req,res,next) => {
     });
 });
 router.post('/', (req,res,next) => {
-    const restaurant = {
-        name:req.body.name,
-        cuisine:req.body.price,
-        location:req.body.location,
-        allergies:req.body.allergies
-    };
-    const Restaurant = new Restaurant({
+   
+    const restaurant = new Restaurant({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         price: req.body.cuizine,
