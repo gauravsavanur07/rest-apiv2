@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-const Restaurant = require('../model/Restaurant');
+const Restaurant = require('../models/Restaurant');
 
 // Handling incoming get requests to /order
 router.get('/', (req,res,next) => {

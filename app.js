@@ -4,15 +4,16 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const restaurantRoutes = require('./api/routes/restaurant');
-const itemRoutes = require('./api/routes/items');
+const restaurantRoutes = require("./api/routes/restaurant");
+const itemRoutes = require("./api/routes/items");
 
-mongoose.connect('mongodb+srv://gaurav:'+process.env.MONGO_ATLAS_ENV+'<gaurav@17114357>@cluster0-ycxzk.mongodb.net/test?retryWrites=true',
+mongoose.connect('mongodb+srv://gaurav:Qwerty%4012345@cluster0-ycxzk.mongodb.net/test?retryWrites=true',
 {
-    useMongoClient: true
-});
+    useNewUrlParser: true
+}
+);
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false, UrlParser: true}));
 app.use(bodyParser.json());
 
 app.use((req,res,next) => {
