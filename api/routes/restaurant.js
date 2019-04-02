@@ -34,7 +34,7 @@ router.post('/', (req,res,next) => {
     });
 });
 router.get('/:restaurantId', (req,res,next) => {
-    const id = req.params.productId;
+    const id = req.params.restaurantId;
 
     if (id ==='special'){
         res.status(200).json({
@@ -54,14 +54,30 @@ router.patch('/:restaurantId', (req,res,next) => {
 });
 
 router.delete('/:restaurantId', (req,res,next) => {
-    res.status(200).json({
-        message : 'delete restaurant'
-    })
+    const id = req.params.restaurantId;
+    Restaurant.remove({_id:id  }).exec()
+    .then(result => {
+        res.status(200).json(result);
+    }).catch(err => {
+        res.status(200).json({
+            error:err
+        });
+       
+    });
 });
 
-router.get('/:', (req,res,next) => {
-    res.status(200).json({
-        message: 'Handle get requests to the file'
-    });
+router.get('/', (req,res,next) => {
+   Restaurant.find()
+   .exec()
+   .then(docs => {
+       console.log(docs);
+       res.status(200).json(docs);
+   })
+   .catch(err => {
+       console.log(err);
+       res.status(500).json({
+           error: err
+       })
+   })
 });
 module.exports = router;
