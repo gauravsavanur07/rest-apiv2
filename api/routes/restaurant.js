@@ -24,12 +24,12 @@ router.post('/', (req,res,next) => {
         location: req.body.location,
         allergies:req.body.allergies
     });
-    product.save().then(result => {
+    restaurant.save().then(result => {
         console.log(result);
     })
     .catch(err => console.log(err));
     res.status(200).json({
-        message: 'Handle POST requests to the /products',
+        message: 'Handle POST requests to the restaurant',
         createdRestaurant: restaurant
     });
 });
