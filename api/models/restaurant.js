@@ -5,6 +5,8 @@ const restaurantSchema = mongoose.Schema({
     name: {type : String , required: true},
     cuisine:{type : String , required: true},
     location:{type : String , required: true},
+    latitude: Number  ,
+    longitude: Number  ,
     allergies:{type : String , required: true}
 
 
