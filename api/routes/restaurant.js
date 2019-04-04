@@ -1,7 +1,31 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const multer = require('multer');
 
+
+const storage = multer.diskStorage({
+    destination : function(req,file, cb){
+        cb(null, './uploads/');
+    },
+    filename : function(req ,file,cb){
+        cb(null, new Date().toISOString() + file.originalName);
+    }
+});
+
+const fileFilter = (req,file, cb) => {
+    //reject a file
+    if(file.mimetype === 'image/jpeg' || file.mimeType == 'image.png'){
+    cb(null,true);
+}
+else{
+    cb(null,false);
+}
+
+};
+const upload = multer({storage: storage, limits:{
+    fileSize: 1024 * 1024 *5
+}});
 const Restaurant = require('../models/Restaurant');
 
 // Handling incoming get requests to /order
@@ -18,8 +42,8 @@ router.get("/", (req,res,next) => {
         });
     });
 });
-router.post('/', (req,res,next) => {
-   
+router.post('/', upload.single('productImage'), (req,res,next) => {
+   console.log(req.file);
     const restaurant = new Restaurant({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -28,6 +52,7 @@ router.post('/', (req,res,next) => {
         latitude: req.body.latitude,
         longitude:req.body.longitude,
         allergies:req.body.allergies,
+        productImage: req.file.path
         
     });
     restaurant.save().then(result => {

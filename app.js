@@ -30,7 +30,7 @@ app.use((req,res,next) => {
 
 app.use('/restaurant', restaurantRoutes);
 app.use('/items', itemRoutes);
-
+app.use('/uploads',express.static('uploads'));
 app.use((req,res,next) => {
     const error = new Error('Not Found');
     error.status =404;
