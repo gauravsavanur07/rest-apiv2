@@ -4,16 +4,16 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 
 
+
 const storage = multer.diskStorage({
-    destination : function(req,file, cb){
+    destination : function(req, file, cb){
         cb(null, './uploads/');
     },
     filename : function(req ,file,cb){
         cb(null, new Date().toISOString() + file.originalName);
     }
 });
-
-const fileFilter = (req,file, cb) => {
+const fileFilter = (req, file, cb) => {
     //reject a file
     if(file.mimetype === 'image/jpeg' || file.mimeType == 'image.png'){
     cb(null,true);
@@ -23,9 +23,16 @@ else{
 }
 
 };
-const upload = multer({storage: storage, limits:{
+
+const upload = multer({
+    storage: storage, 
+    limits:{
     fileSize: 1024 * 1024 *5
-}});
+},
+fileFilter :fileFilter
+});
+
+
 const Restaurant = require('../models/Restaurant');
 
 // Handling incoming get requests to /order
@@ -42,7 +49,7 @@ router.get("/", (req,res,next) => {
         });
     });
 });
-router.post('/', upload.single('productImage'), (req,res,next) => {
+router.post("/", upload.single('productImage') , (req,res,next) => {
    console.log(req.file);
     const restaurant = new Restaurant({
         _id: new mongoose.Types.ObjectId(),
@@ -52,7 +59,7 @@ router.post('/', upload.single('productImage'), (req,res,next) => {
         latitude: req.body.latitude,
         longitude:req.body.longitude,
         allergies:req.body.allergies,
-        productImage: req.file.path
+        // productImage: req.file.path
         
     });
     restaurant.save().then(result => {
@@ -78,8 +85,24 @@ router.get("/:restaurantId", (req,res,next) => {
         res.status(500).json({error :err});
     });
 });
+router.get("/:name", (req,res,next) => {
+    // const name = req.params.name;
+    // const location = req.params.location;
 
-router.patch('/:restaurantId', (req,res,next) => {
+    Restaurant.find(name)
+    .exec()
+    .then(doc => {
+        console.log(doc);
+        res.status(200).json(doc);
+    })
+    .catch(err =>  {
+        console.log(err);
+        res.status(500).json({error :err});
+    });
+
+});
+
+router.patch('/:restaurantId', upload.single('productImage') ,(req,res,next) => {
     const id = req.params.restaurantId;
     const updateOps = {};
     for(const ops of req.body){
