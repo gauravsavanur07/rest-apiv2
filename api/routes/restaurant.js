@@ -71,7 +71,7 @@ router.post("/", upload.single('productImage') , (req,res,next) => {
         createdRestaurant: restaurant
     });
 });
-router.get("/:restaurantId", (req,res,next) => {
+router.getOne("/:restaurantId", (req,res,next) => {
     const id = req.params.restaurantId;
 
     Restaurant.findById(id)

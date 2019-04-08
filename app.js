@@ -12,6 +12,7 @@ mongoose.connect('mongodb+srv://gaurav:Qwerty%4012345@cluster0-ycxzk.mongodb.net
     useNewUrlParser: true
 }
 );
+
 app.use(morgan('dev'));
 app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: false, UrlParser: true}));
