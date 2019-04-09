@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const restaurantRoutes = require("./api/routes/restaurant");
+const menuRoutes = require("./api/routes/menu");
 const itemRoutes = require("./api/routes/items");
 
 mongoose.connect('mongodb+srv://gaurav:Qwerty%4012345@cluster0-ycxzk.mongodb.net/test?retryWrites=true',
@@ -30,6 +31,7 @@ app.use((req,res,next) => {
 
 
 app.use('/restaurant', restaurantRoutes);
+app.use('/menu', menuRoutes);
 app.use('/items', itemRoutes);
 app.use('/uploads',express.static('uploads'));
 app.use((req,res,next) => {
