@@ -6,6 +6,7 @@ const server = http.createServer(app);
 
 server.listen(port);
 // lambda.js
+//updated file from node to lambda
 // 'use strict'
 // const awsServerlessExpress = require('aws-serverless-express')
 // const app = require('./app')

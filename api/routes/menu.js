@@ -1,5 +1,12 @@
+//importing the express framework
 const express = require ('express');
+//importing the API router(url) using express
 const router = express.Router();
+//importing the mongoose
+const mongoose = require('mongoose');
+
+//modelling the variable menu
+const Menu = require('../models/menu'); 
 
 router.get('/', (req, res, next) => {
     res.status(200).json({
@@ -8,6 +15,15 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
+   //created a new menu using mongoose
+    const menu = new Menu({
+        _id: new mongoose.Types.ObjectId(),
+        name: req.body.name,
+        price: req.body.price,
+        calories: req.body.calories
+    })
+    //adds to the database
+    menu.save();
     res.status(200).json({
         message: 'Handling POST requests to /menu'
     })
