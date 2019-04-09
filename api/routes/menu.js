@@ -22,8 +22,10 @@ router.post('/', (req, res, next) => {
         price: req.body.price,
         calories: req.body.calories
     })
-    //adds to the database
-    menu.save();
+    //adds to the database (mongoose method)
+    menu.save().then(result => {
+        console.log(result);
+    });
     res.status(200).json({
         message: 'Handling POST requests to /menu'
     })
