@@ -13,6 +13,10 @@ router.get('/', (req, res, next) => {
         message: 'Handling GET requests to /menu'
     })
 })
+menu.save().then(result => {
+    console.log(result);
+})
+.catch(err => console.log(err));
 
 router.post('/', (req, res, next) => {
    //created a new menu using mongoose
