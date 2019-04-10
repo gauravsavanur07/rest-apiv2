@@ -13,25 +13,21 @@ router.get('/', (req, res, next) => {
         message: 'Handling GET requests to /menu'
     })
 })
-menu.save().then(result => {
-    console.log(result);
-})
-.catch(err => console.log(err));
-
 router.post('/', (req, res, next) => {
-   //created a new menu using mongoose
+   //created a new menu instance using mongoose
     const menu = new Menu({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         price: req.body.price,
         calories: req.body.calories
-    })
+    });
     //adds to the database (mongoose method)
     menu.save().then(result => {
         console.log(result);
     });
     res.status(200).json({
-        message: 'Handling POST requests to /menu'
+        message: 'Handling POST requests to /menu',
+        createdMenu: menu
     })
 })
 
@@ -60,5 +56,5 @@ router.delete('/:menuId',(req, res, next) => {
         message: 'Deleted menu'
     })
 })
-
+//exporting the API router using module
 module.exports = router;

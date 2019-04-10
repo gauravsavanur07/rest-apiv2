@@ -32,7 +32,8 @@ app.use((req,res,next) => {
 
 app.use('/restaurant', restaurantRoutes);
 app.use('/menu', menuRoutes);
-app.use('/items', itemRoutes);
+//items is changed as menu
+//app.use('/items', itemRoutes);
 app.use('/uploads',express.static('uploads'));
 app.use((req,res,next) => {
     const error = new Error('Not Found');
