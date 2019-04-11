@@ -67,13 +67,27 @@ router.get('/:menuId', (req, res, next) => {
 
 
 router.patch('/:menuId',(req, res, next) => {
-    res.status(200).json({
-        message: 'Updated menu'
-    })
-})
+   const id = req.params.menuId;
+   const updateOps = {};
+   for(const ops of req.body){
+    updateOps[ops.propName] = ops.value;
+    }
+   Menu.update({_id: id}, {$set: updateOps })
+   .exec()
+   .then(result => {
+       console.log(result);
+       res.status(200).json(result);
+   })
+   .catch(err =>  {
+       console.log(err);
+       res.status(500).json({
+           error: err
+       });
+   });
+});
 
 router.delete('/:menuId',(req, res, next) => {
-    const id = req.params.productId;
+    const id = req.params.menuId;
     Menu.remove({_id: id})
     . exec()
     .then(result => {
