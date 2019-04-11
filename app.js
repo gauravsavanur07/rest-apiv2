@@ -1,9 +1,9 @@
 const serverless = require("serverless-http");
-const express = require('express');
+const express = require("express");
 const app = express();
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 const restaurantRoutes = require("./api/routes/restaurant");
 const itemRoutes = require("./api/routes/items");
@@ -164,18 +164,18 @@ app.delete('/restaurant/:restaurantId', function (req,res,next)  {
 });
 app.use('/items', itemRoutes);
 app.use('/uploads',express.static('uploads'));
-app.use((req,res,next) => {
-    const error = new Error('Not Found');
-    error.status =404;
-    next(error);
-})
+// app.use((req,res,next) => {
+//     const error = new Error('Not Found');
+//     error.status =404;
+//     next(error);
+// })
 
-app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
-        error: {
-            message: error.message
-        }
-    });
-});
+// app.use((error, req, res, next) => {
+//     res.status(error.status || 500);
+//     res.json({
+//         error: {
+//             message: error.message
+//         }
+//     });
+// });
 module.exports.handler = serverless(app);
