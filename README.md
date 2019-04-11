@@ -25,4 +25,10 @@ To confirm you have commited all your changes localy run git status.
 
 Push Changes to Github
 After you have confimed that you have commited everything you are now ready to push your branch to github, to do this you need to run the command git push origin name-of-branch.
-!/Users/gaurav/Desktop/Screen\ Shot\ 2019-04-05\ at\ 3.29.53\ PM.png
+
+Testing 
+Postman 
+Mocha - It comes with tons of great features, the website shows a long list but here are the ones I like the most:
+simple async support, including promises.
+async test timeout support.
+before, after, before each, after each hooks (very useful to clean the environment where each test!).
