@@ -73,9 +73,18 @@ router.patch('/:menuId',(req, res, next) => {
 })
 
 router.delete('/:menuId',(req, res, next) => {
-    res.status(200).json({
-        message: 'Deleted menu'
+    const id = req.params.productId;
+    Menu.remove({_id: id})
+    . exec()
+    .then(result => {
+        res.status(200).json(result);
     })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        }); 
+    });
 })
 //exporting the API router using module
 module.exports = router;
