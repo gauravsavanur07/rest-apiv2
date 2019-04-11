@@ -1,0 +1,39 @@
+﻿name,cuisine,location,latitude ,longitude,allergies ,Calories per meal,Nutritional values
+,,,,,,,
+Luigi Malones ,"American, Pizza",dublin 2 ,53.346562, -6.263399,"Wheat,Gluten,Sesame Seeds and Milk",175 - 1250 ,"high protien, High carbs"
+,,,,,,,
+Gourmet Burger Kitchen (GBK),"Burgers,American","Unit 1, Temple Bar Square, Temple Bar, Dublin 2, Dublin,",53.345537,-6.263244,Wheat Gluten and Nuts,295 - 800,"high fibre, high sodium"
+,,,,,,,
+Bobo's,"American, Burgers,Chicken","22 Wexford St, Dublin,",53.336514,-6.265743,Gluten Sesame Seeds and Alcohol ,165 - 615,"high protien, low carbs"
+,,,,,,,
+Token ,"American,Burgers,Drinks",Arran Quay,53.334597,-6.265088,"Gluten Free ,Peanut and Sesame Seeds Present ",190  - 650,high cholestrol
+,,,,,,,
+Camden Rotisserie,"American, Burgers,Chicken","37 Camden Street, Dublin,",53.334584, -6.265077,"Gluten Free ,Egg Free",200 - 506,"high fibre, high carbs, low sugar"
+,,,,,,,
+Eddie Rocket's Diner,"Burgers,American",Parnel Street Dublin 1 ,53.350535,-6.267351,"peanuts, fish, milk and Gluten Present",320 - 990,"high fibre, low sugar"
+,,,,,,,
+Rocket's,Burgers American and Dessert,Temple Bar Dublin 1,53.344527, -6.266482,"peanuts, fish, milk and Gluten ",170 - 620,"moderate fats, high cholestrol"
+,,,,,,,
+Supermac's,"Burgers, AmericanMeal Deals",Temple Bar Dublin 1,53.345069,-6.264139,"gluten,fish, Milk ",220 - 800,"high sodium, high fats"
+,,,,,,,
+My Meat Wagon,"BBQ, American","Smithfield Market Square, Smithfield, Dublin 7, Dublin,",53.349066,-6.278906,"gluten,fish, Sesame Seeds and Alcohol",250 - 1050,"high protien , low sodium"
+,,,,,,,
+Chick'n Lick'n,"Burgers, Chicken and Halal","27 Liffey Street Lower North City, Dublin 1, Dublin",53.347499,-6.263558,gluten and fish ,200 - 825,"high fats, high sodium"
+,,,,,,,
+SuperSubs,"Salads and Sandwiches, Breakfast","O'Connell Street Lower, Dublin",53.351411,-6.261477,Gluten Free Options Available,84 - 540,"high fibre, high protien"
+,,,,,,,
+KFC , AmericanBurgersFried chicken,"Retail Unit 1, Greeg Court, Parnell Street, Dublin",53.346328,-6.259449,Gluten and Sesame Seeds Present,140 - 650,"high cholestrol, high fats, high protien"
+,,,,,,,
+Sbarro New York Pizza,"Pizza, American, Italian Meal Deals","Ilac Centre, Dublin",53.348248,-6.265566,Gluten and Pork,240 - 970,"high sodium, moderate fibre"
+,,,,,,,
+Supermac's,Burgers American Meal Deals,"45 O'Connell Street Lower, Dublin",53.344967,-6.264118,Gluten and Milk,103 - 520,"high sodium, high fats"
+,,,,,,,
+Jimmy Chung,"Japanese,Chinese ",8 Eden Quay,53.348376,-6.258416,"Gluten,Pork and Alcohol",110 - 640,"high protien, high fibre"
+,,,,,,,
+Mcdonalds,"American, Burgers and Drinks",Dublin 1,53.350277,-6.260889,"gluten,fish, Milk ",90 - 630,"high cholestrol, high fat"
+,,,,,,,
+Five Guys,"Burgers, American and Milkshakes","57 South Great George's Street, Dublin 2, Dublin",53.342129,-6.265041,"Gluten,sessame Seeds and Milk",300 - 684,"high fibre , high sugar"
+,,,,,,,
+Subway ,"Burgers,American","5 Cecilia Street, Dublin",53.349454, -6.244527,Gluten and Pork,295 - 504,"high protien, moderate fats"
+,,,,,,,
+Wasabi Restaurant Sushi Bar,Sushi and Japanese,"77 Dorset Street Upper, Inns Quay, Dublin,",53.357055,-6.264307,Fish Alcohol and Milk,150 - 1000,"high protien, high calcium"
