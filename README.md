@@ -1,5 +1,5 @@
 # rest-apiv2
-API End-points - 
+API End-points -
 endpoints:
  
   POST - https://7osakzjq62.execute-api.us-east-1.amazonaws.com/dev/restaurant
@@ -25,3 +25,4 @@ To confirm you have commited all your changes localy run git status.
 
 Push Changes to Github
 After you have confimed that you have commited everything you are now ready to push your branch to github, to do this you need to run the command git push origin name-of-branch.
+!/Users/gaurav/Desktop/Screen\ Shot\ 2019-04-05\ at\ 3.29.53\ PM.png
