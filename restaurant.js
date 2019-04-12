@@ -8,7 +8,9 @@ const restaurantSchema = mongoose.Schema({
     latitude: String  ,
     longitude: String  ,
     allergies:{type : String , required: true},
-    productImage :String
+    productImage :String,
+    nutrition:String,
+    calories:String
 
 
 });
