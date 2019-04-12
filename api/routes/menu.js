@@ -24,9 +24,11 @@ router.post('/', (req, res, next) => {
    //created a new menu instance using mongoose
     const menu = new Menu({
         _id: new mongoose.Types.ObjectId(),
-        name: req.body.name,
+        restaurant_name: req.body.restaurant_name,
+        meal_name: req.body.meal_name,
         price: req.body.price,
-        calories: req.body.calories
+        calories: req.body.calories,
+        nutrition: req.body.nutrition
     });
     //adds to the database (mongoose method)
     menu.save().then(result => {
