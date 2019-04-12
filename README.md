@@ -32,3 +32,13 @@ Mocha - It comes with tons of great features, the website shows a long list but 
 simple async support, including promises.
 async test timeout support.
 before, after, before each, after each hooks (very useful to clean the environment where each test!).
+
+Serverless.yaml
+The Serverless Framework – Build applications comprised of microservices that run in response to events, auto-scale for you, and only charge you when they run. This lowers the total cost of maintaining your apps, enabling you to build more logic, faster.
+
+The Framework uses new event-driven compute services, like AWS Lambda, Google Cloud Functions, and more. It's a command-line tool, providing scaffolding, workflow automation and best practices for developing and deploying your serverless architecture. It's also completely extensible via plugins.
+
+
+NLP Algorithm -Golang Library -allergies mapping excel csv file - webscraping branch 
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4419999/
+https://github.com/abadojack/whatlanggo
