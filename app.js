@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const restaurantRoutes = require("./api/routes/restaurant");
-const itemRoutes = require("./api/routes/items");
+const menuRoutes = require("./api/routes/menu");
+const itemsRoutes = require("./api/routes/items");
 
 mongoose.connect('mongodb+srv://gaurav:Qwerty%4012345@cluster0-ycxzk.mongodb.net/test?retryWrites=true',
 {
@@ -29,7 +30,9 @@ app.use((req,res,next) => {
 
 
 app.use('/restaurant', restaurantRoutes);
-app.use('/items', itemRoutes);
+app.use('/menu', menuRoutes);
+//items is changed as menu
+//app.use('/items', itemRoutes);
 app.use('/uploads',express.static('uploads'));
 app.use((req,res,next) => {
     const error = new Error('Not Found');
