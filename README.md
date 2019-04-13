@@ -11,6 +11,8 @@ endpoints:
   PUT - https://7osakzjq62.execute-api.us-east-1.amazonaws.com/dev/restaurant/{id}
   
   DELETE - https://7osakzjq62.execute-api.us-east-1.amazonaws.com/dev/restaurant/{id}
+  
+Tech Stack - Node.js,Python,MongoDB Atlas,AWS Lambda,API Gateway
 
 Github Workflow
 Creating a Branch
