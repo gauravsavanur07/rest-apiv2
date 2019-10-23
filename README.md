@@ -1,4 +1,5 @@
 # rest-apiv2
+Anyone seeing the endpoints have been shutdown due to AWS Costs.However its locally hosted on my database.You can download my previous version code api changes to see these changes
 API End-points -
 endpoints:
  
